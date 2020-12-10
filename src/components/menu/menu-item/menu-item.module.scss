@@ -1,0 +1,28 @@
+@import '../../../style-guide/index';
+
+.menu-item {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: map-get($monochrome, light-tint);
+    }
+
+    &--disabled {
+      opacity: 0.25;
+      pointer-events: none;
+    }
+  }
+
+  &__item-label {
+    font-size: 14px;
+    line-height: 32px;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+}

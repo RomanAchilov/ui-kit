@@ -3,9 +3,10 @@ import { BEM, div } from '@redneckz/react-bem-helper';
 import VisibilitySensor from 'react-visibility-sensor';
 import { nanoid } from 'nanoid';
 
+import { Tooltip } from '../tooltip';
 import { Icons } from '../icon';
 import { useClickOutside } from '../../hooks';
-import { spacesToDashes } from './spaces-to-dashes';
+import { MenuItem } from './menu-item/menu-item';
 
 import styles from './menu.module.scss';
 
@@ -13,6 +14,8 @@ interface MenuItemType {
   label: string;
   icon: keyof typeof Icons;
   onClick: () => void;
+  tooltipMessage?: React.ReactNode;
+  disabled?: boolean;
 }
 
 interface Props {
@@ -42,15 +45,17 @@ export const Menu = menu(({
             }}
           >
             <ItemsList position={position}>
-              {items.map(({ icon, label, onClick }) => {
-                const ItemIcon = Icons[icon];
-                return (
-                  <Item onClick={onClick} key={nanoid()} data-test={`menu:item:${spacesToDashes(label)}`}>
-                    <ItemIcon width={16} height={16} />
-                    <ItemLabel>{label}</ItemLabel>
-                  </Item>
-                );
-              })}
+              {items.map(({
+                icon, label, onClick, disabled, tooltipMessage,
+              }) => (
+                <>
+                  {tooltipMessage ? (
+                    <Tooltip message={tooltipMessage} key={nanoid()}>
+                      <MenuItem icon={icon} label={label} onClick={onClick} disabled={disabled} />
+                    </Tooltip>
+                  ) : <MenuItem key={nanoid()} icon={icon} label={label} onClick={onClick} disabled={disabled} />}
+                </>
+              ))}
             </ItemsList>
           </VisibilitySensor>
         )}
@@ -61,5 +66,3 @@ export const Menu = menu(({
 
 const MenuIcon = menu.menuIcon(div({ onClick: () => {}, 'data-test': '' } as { onClick?: () => void; 'data-test'?: string }));
 const ItemsList = menu.itemsList(div({} as { position?: 'bottom' | 'top' }));
-const Item = menu.item('div');
-const ItemLabel = menu.itemLabel('span');
