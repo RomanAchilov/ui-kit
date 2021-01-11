@@ -132,8 +132,8 @@
   }
 
   &__label {
-    margin-left: 8px;
-    font-size: 14px;
+    margin-left: map-get($gutter-widths, extra-small);
+    font-size: map-get($font-sizes, small);
     line-height: 20px;
     color: map-get($monochrome, black);
   }

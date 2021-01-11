@@ -1,10 +1,10 @@
 @import '../../style-guide/index';
 
 .badge {
-  padding: 0 8px;
+  padding: 0 map-get($gutter-widths, extra-small);
   border: 1px solid currentColor;
   border-radius: 11px;
-  font-size: 12px;
+  font-size: map-get($font-sizes, extra-small);
   line-height: 20px;
 
   &--bold {

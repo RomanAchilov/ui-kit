@@ -2,8 +2,8 @@
 
 .icons-table {
   &__icon-info {
-    margin-top: 8px;
-    font-size: 18px;
+    margin-top: map-get($gutter-widths, extra-small);
+    font-size: map-get($font-sizes, large);
     font-family: $light-font;
     color: map-get($monochrome, shade);
   }
@@ -32,16 +32,16 @@
   &__icon-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 8px 8px;
+    padding: map-get($gutter-widths, extra-small) map-get($gutter-widths, extra-small);
     border: 1px solid map-get($monochrome, dark-tint);
     align-items: center;
     & > *:not(:first-child) {
-      margin-top: 8px;
+      margin-top: map-get($gutter-widths, extra-small);
     }
   }
 
   &__icon-label {
-    font-size: 14px;
+    font-size: map-get($font-sizes, small);
     font-family: $light-font;
     color: map-get($monochrome, default);
   }

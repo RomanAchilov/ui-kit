@@ -5,8 +5,8 @@
   border-radius: 13px;
   background-color: map-get($green, default);
   color: map-get($monochrome, white);
-  font-size: 12px;
+  font-size: map-get($font-sizes, extra-small);
   font-family: $semibold-font;
   line-height: 12px;
-  padding: 3px 8px;
+  padding: map-get($gutter-widths, micro) map-get($gutter-widths, extra-small);
 }

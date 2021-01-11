@@ -3,12 +3,12 @@
 .button {
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 16px;
   outline: 0;
   cursor: pointer;
 
   & > :not(:last-child) {
-    margin-right: 8px;
+    margin-right: map-get($gutter-widths, extra-small);
   }
 
   &--type {
@@ -47,14 +47,14 @@
   &--size {
     &--large {
       line-height: 18px;
-      padding: 6px 16px;
-      font-size: 14px;
+      padding: 6px map-get($gutter-widths, medium);
+      font-size: map-get($font-sizes, small);
     }
 
     &--small {
       line-height: 14px;
-      padding: 4px 12px;
-      font-size: 12px;
+      padding: map-get($gutter-widths, micro) map-get($gutter-widths, small);
+      font-size: map-get($font-sizes, extra-small);
     }
   }
 

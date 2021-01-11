@@ -2,13 +2,13 @@
 
 .general-alerts {
   display: flex;
-  font-size: 14px;
+  font-size: map-get($font-sizes, small);
   line-height: 20px;
 
   &__content {
     display: flex;
     width: 100%;
-    padding: 12px 24px;
+    padding: map-get($gutter-widths, small) map-get($gutter-widths, extra-large);
     word-break: break-word;
 
     &--type {
@@ -36,7 +36,7 @@
     align-self: start;
     align-items: center;
     height: 20px;
-    margin-right: 8px;
+    margin-right: map-get($gutter-widths, extra-small);
 
     &--type {
       &--success {

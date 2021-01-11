@@ -13,7 +13,7 @@
     left: 50%;
     top: 8px;
     transform: translate(-50%);
-    font-size: 12px;
+    font-size: map-get($font-sizes, extra-small);
     color: map-get($monochrome, dark-tint);
 
     &--type {

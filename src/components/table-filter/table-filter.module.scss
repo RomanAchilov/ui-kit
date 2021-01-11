@@ -6,7 +6,7 @@
 
   &__selected-items {
     font-family: $semibold-font;
-    font-size: 12px;
+    font-size: map-get($font-sizes, extra-small);
     color: map-get($primary-blue, default);
 
     &:not(:last-child)::after {
@@ -37,8 +37,8 @@
     flex-direction: row;
     align-items: center;
     min-height: 32px;
-    padding: 0px 8px;
-    font-size: 12px;
+    padding: 0px map-get($gutter-widths, extra-small);
+    font-size: map-get($font-sizes, extra-small);
     color: map-get($monochrome, black);
     cursor: pointer;
 

@@ -5,7 +5,7 @@
 
   &__input-element {
     input {
-      padding: 0 24px;
+      padding: 0 map-get($gutter-widths, extra-large);
       width: 240px;
       max-height: 25px;
       border: 0;

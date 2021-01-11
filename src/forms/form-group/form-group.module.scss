@@ -3,24 +3,24 @@
 .form-group {
   &__label {
     font-family: $semibold-font;
-    font-size: 14px;
+    font-size: map-get($font-sizes, small);
     line-height: 20px;
     color: map-get($monochrome, black);
   }
 
   &__optional-label {
     line-height: 16px;
-    font-size: 12px;
+    font-size: map-get($font-sizes, extra-small);
     color: map-get($monochrome, default);
   }
 
   &__actions {
     display: flex;
-    margin-left: 8px;
+    margin-left: map-get($gutter-widths, extra-small);
   }
 
   &__input {
     width: 100%;
-    margin-top: 8px;
+    margin-top: map-get($gutter-widths, extra-small);
   }
 }

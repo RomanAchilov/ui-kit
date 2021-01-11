@@ -1,15 +1,15 @@
-@import '../../style-guide/colors';
+@import '../../style-guide/index';
 
 .legend {
   display: flex;
-  gap: 24px;
-  font-size: 12px;
+  gap: map-get($gutter-widths, extra-large);
+  font-size: map-get($font-sizes, extra-small);
   line-height: 16px;
   color: map-get($monochrome, default);
 
   &__item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: map-get($gutter-widths, extra-small);
   }
 }
